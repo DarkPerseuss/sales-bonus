@@ -124,11 +124,11 @@ function analyzeSalesData(data, options) {
     return sellerStats.map(seller => ({
         seller_id: seller.id,
         name: `${seller.first_name} ${seller.last_name}`,
-        revenue: seller.revenue.toFixed(2),
-        profit: seller.profit.toFixed(2),
+        revenue: +seller.revenue.toFixed(2),
+        profit: +seller.profit.toFixed(2),
         sales_count: seller.sales_count,
         top_products: seller.top_products, // Массив объектов вида: { "sku": "SKU_008","quantity": 10}, топ-10 товаров продавца
-        bonus: seller.bonus.toFixed(2)// Число с двумя знаками после точки, бонус продавца
+        bonus: +seller.bonus.toFixed(2)// Число с двумя знаками после точки, бонус продавца
     })); 
     // @TODO: Назначение премий на основе ранжирования
 
